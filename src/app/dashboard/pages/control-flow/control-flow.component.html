@@ -25,13 +25,13 @@
 
       @switch ( grade() ) {
         @case ('A') {
-          <p class="flex justify-center rounded-md bg-green-50 px-2 py-2 text-xs font-medium text-green-700 ring-1 ring-inset ring-green-600/20">Puntuación mayor a 90.</p>
+          <p [classList]="classBadges.concat(' bg-green-50 text-green-700 ring-green-600/20')">Puntuación mayor a 90.</p>
         }
         @case ('B') {
-          <p class="flex justify-center rounded-md bg-yellow-50 px-2 py-2 text-xs font-medium text-yellow-800 ring-1 ring-inset ring-yellow-600/20">Puntuación mayor a 70.</p>
+          <p [classList]="classBadges.concat(' bg-yellow-50 text-yellow-800 ring-yellow-600/20')">Puntuación mayor a 70.</p>
         }
         @default {
-          <p class="flex justify-center rounded-md bg-red-50 px-2 py-2 text-xs font-medium text-red-700 ring-1 ring-inset ring-red-600/10">Puntuación menor a 70.</p>
+          <p [classList]="classBadges.concat(' bg-red-50 text-red-700 ring-red-600/10')">Puntuación menor a 70.</p>
         }
       }
 
@@ -40,5 +40,22 @@
               class="p-2 bg-blue-600 rounded text-white mt-5">
           Cambiar calificación
       </button>
-  </div>
+    </div>
+
+    <div class="bg-white rounded shadow p-10 text-center">
+      <div class="flex justify-evenly">
+          <h2 class="text-2xl font-bold mb-5">Frameworks</h2>
+      </div>
+
+      <div class="flex justify-around">
+        @for (framework of frameworks(); track $index; let odd = $odd, even = $even) {
+          <span [ngClass]="{'bg-purple-300 text-purple-700 ring-purple-700/10': even,
+                            'bg-indigo-300 text-indigo-700 ring-indigo-700/10': odd}"
+                [classList]="classBadges.concat(' w-20')">
+            {{ framework }}
+          </span>
+        }
+      </div>
+
+    </div>
 </section>
