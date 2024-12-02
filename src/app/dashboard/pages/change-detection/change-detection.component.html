@@ -1,1 +1,9 @@
-<p>change-detection works!</p>
+<app-title title="Change Detection"></app-title>
+
+<div class="bg-white rounded shadow p-10 mb-2">
+  <pre>{{ frameworkAsProperty | json }}</pre>
+</div>
+
+<div class="bg-white rounded shadow p-10">
+  <pre>{{ frameworkAsSignal() | json }}</pre>
+</div>
