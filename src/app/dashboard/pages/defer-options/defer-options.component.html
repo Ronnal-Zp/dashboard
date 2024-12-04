@@ -1,1 +1,42 @@
-<p>defer-options works!</p>
+<app-title title="Defer Triggers"></app-title>
+
+<section>
+  <hr class="my-2 border-black">
+  <h1 class="text-xl">Interacciones</h1>
+
+  @defer (on interaction) {
+    <app-heavy-loaders-fast cssClass="bg-blue-700 h-20">
+      <span>On Interaction</span>
+    </app-heavy-loaders-fast>
+  } @placeholder {
+    <div class="w-full h-12 bg-red-800">Click me!!</div>
+  }
+</section>
+
+
+<section>
+  <hr class="my-2 border-black">
+  <h1 class="text-xl">Interacciones con referencia</h1>
+  <button class="mb-2 py-1 px-2 rounded bg-blue-600" #btnClick>Click me!!</button>
+
+  @defer (on interaction(btnClick)) {
+    <app-heavy-loaders-fast cssClass="bg-blue-700 h-20">
+      <span>On Interaction</span>
+    </app-heavy-loaders-fast>
+  } @placeholder {
+    <div class="w-full h-12 bg-green-800">Placeholder</div>
+  }
+</section>
+
+<section>
+  <hr class="my-2 border-black">
+  <h1 class="text-xl">Interacciones con timer</h1>
+
+  @defer (on timer(2000)) {
+    <app-heavy-loaders-fast cssClass="bg-blue-700 h-20">
+      <span>On Interaction</span>
+    </app-heavy-loaders-fast>
+  } @placeholder {
+    <div class="w-full h-12 bg-purple-800">2 Segundos</div>
+  }
+</section>
