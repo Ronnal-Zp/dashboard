@@ -22,7 +22,7 @@ export const routes: Routes = [
             },
             {
                 path: 'defer-views',
-                title: 'Defe Views',
+                title: 'Defer Views',
                 loadComponent: () => import('./dashboard/pages/defer-views/defer-views.component')
             },
             {
