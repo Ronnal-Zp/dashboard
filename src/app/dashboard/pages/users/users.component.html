@@ -1,1 +1,21 @@
-<p>users works!</p>
+<app-title title="Listado de Usuarios"></app-title>
+
+@if (usersService.loading()) {
+<div class="w-full h-screen bg-slate-600 rounded grid items-center ">
+  <p class="text-white text-lg text-center">CARGANDO...</p>
+</div>
+} @else {
+<ul>
+  @for (user of usersService.users(); track user.id) {
+  <li class="flex items-center my-2 cursor-pointer">
+    <img [srcset]="user.avatar" [alt]="user.first_name" class="rounded w-14">
+
+    <a [routerLink]="['/dashboard/user', user.id]" class="mx-5 hover:underline">
+      {{ user.first_name }} {{ user.last_name }}
+    </a>
+  </li>
+  } @empty {
+  <p class="px-2 py-3 bg-teal-900 rounded flex items-center justify-center">No existen usuarios.</p>
+  }
+</ul>
+}
