@@ -4,11 +4,10 @@ import { SideMenuComponent } from '@shared/side-menu/side-menu.component';
 
 
 @Component({
-  selector: 'app-dashboard',
-  standalone: true,
-  imports: [RouterModule, SideMenuComponent],
-  templateUrl: './dashboard.component.html',
-  styleUrl: './dashboard.component.css'
+    selector: 'app-dashboard',
+    imports: [RouterModule, SideMenuComponent],
+    templateUrl: './dashboard.component.html',
+    styleUrl: './dashboard.component.css'
 })
 export class DashboardComponent {
 

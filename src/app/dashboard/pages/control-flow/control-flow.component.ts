@@ -6,11 +6,10 @@ type Grade = 'A'|'B'|'F';
 
 
 @Component({
-  selector: 'app-control-flow',
-  standalone: true,
-  imports: [CommonModule, TitleComponent],
-  templateUrl: './control-flow.component.html',
-  styleUrl: './control-flow.component.css'
+    selector: 'app-control-flow',
+    imports: [CommonModule, TitleComponent],
+    templateUrl: './control-flow.component.html',
+    styleUrl: './control-flow.component.css'
 })
 export default class ControlFlowComponent {
 
