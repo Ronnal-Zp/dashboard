@@ -3,6 +3,7 @@
 
 <div class="grid grid-cols-1 sm:grid-cols-3 gap-2">
   @for (product of products(); track product.id) {
-    <app-product-card></app-product-card>
+    <app-product-card (onIncrementQuantity)="updateQuantity(product, $event)"
+                      [product]="product"></app-product-card>
   }
 </div>
