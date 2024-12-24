@@ -3,6 +3,7 @@ import { provideRouter, withViewTransitions } from '@angular/router';
 import { provideHttpClient, withFetch } from '@angular/common/http';
 
 import { routes } from './app.routes';
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -11,6 +12,6 @@ export const appConfig: ApplicationConfig = {
       routes,
       withViewTransitions({skipInitialTransition: true})
     ),
-    provideHttpClient(withFetch())
+    provideHttpClient(withFetch()), provideAnimationsAsync()
   ]
 };
